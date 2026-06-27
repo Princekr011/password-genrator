@@ -1,0 +1,32 @@
+<script>
+        const passwordBox = document.getElementById("password");
+        const length = 12;
+
+        const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        const lowercase = "abcdefghijklmnopqrstuvwxyz";
+        const number = "0123456789";
+        const symbol = "!@#$%^&*()_+~`|}{[]:;?><,./-=";
+
+        const allChars = uppercase + lowercase + number + symbol;
+
+        function createPassword() {
+             /* that herer one const passswordbox  equal cocument.getElment by iud in this id password to edit passwoe name passwored box after that let const lenfht = 12, if want to change you can
+             differnt character is you can use then add cosnt lowercase - ' a t z' there upper case and lower case both then const  number const 1 to 9 then const for symbol like !@#$%^&*()  the function create passwor() curluybracess  */
+            let password = "";
+            password += uppercase[Math.floor(Math.random() * uppercase.length)]; 
+            password += lowercase[Math.floor(Math.random() * lowercase.length)];
+            password += number[Math.floor(Math.random() * number.length)];
+            password += symbol[Math.floor(Math.random() * symbol.length)];
+
+            while(length > password.length){
+                password += allChars[Math.floor(Math.random() * allChars.length)];
+            }
+            passwordBox.value = password;
+        } 
+       
+        function copyPassword() {
+            passwordBox.select();
+            document.execCommand("copy");
+        }
+
+    </script>
